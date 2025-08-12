@@ -12,6 +12,18 @@ function agregarAmigo(){
         return;
     }
     listaDeAmigos.push(nombreAmigo);
-    listaAmigos.innerHTML += `<li>${amigo.value}</li>`;
     amigo.value=""
+    actualizarLista();
+};
+
+//function sortearAmigo(){
+    //let numeroRandom=Math.floor(Math.random()*listaDeAmigos.length);
+    //let amigoSecreto=listaAmigos[numeroRandom]
+//}
+
+function actualizarLista(){
+    listaAmigos.innerHTML=""
+    for(let i=0; i<listaDeAmigos.length; i++){
+        listaAmigos.innerHTML+=`<li>${listaDeAmigos[i]}</li>`
+    }
 }
