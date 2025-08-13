@@ -16,14 +16,20 @@ function agregarAmigo(){
     actualizarLista();
 };
 
-//function sortearAmigo(){
-    //let numeroRandom=Math.floor(Math.random()*listaDeAmigos.length);
-    //let amigoSecreto=listaAmigos[numeroRandom]
-//}
-
 function actualizarLista(){
     listaAmigos.innerHTML=""
     for(let i=0; i<listaDeAmigos.length; i++){
         listaAmigos.innerHTML+=`<li>${listaDeAmigos[i]}</li>`
     }
+};
+
+function sortearAmigo(){
+    if(listaDeAmigos.length===0){
+        alert('No hay amigos para sortear');
+        return;
+    }
+    let numeroRandom=Math.floor(Math.random()*listaDeAmigos.length);
+    let amigoSecreto=listaDeAmigos[numeroRandom]
+    let resultado=document.getElementById('resultado');
+    resultado.innerHTML=`<li>El amigo secreto es: ${amigoSecreto}</li>`
 }
